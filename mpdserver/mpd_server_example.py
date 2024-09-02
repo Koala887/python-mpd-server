@@ -26,7 +26,7 @@ class MpdPlaylist(mpdserver.MpdPlaylist):
         self.playlist[i],self.playlist[j]=self.playlist[j],self.playlist[i]
 
 # Create a deamonized mpd server that listen on port 9999
-mpd=mpdserver.MpdServerDaemon(9999)
+mpd=mpdserver.MpdServerDaemon(6600)
 # Register provided outputs command 
 mpd.requestHandler.RegisterCommand(mpdserver.Outputs)
 # Register your own command implementation

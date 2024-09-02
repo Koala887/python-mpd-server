@@ -92,8 +92,10 @@ class NotCommands(CommandItems): pass# Not used by gmpc
     # def items(self):
     #     return [('command','tagtypes'),
     #             ('command','lsinfo')]
-class Commands(CommandItems): pass# Not used by gmpc
-
+class Commands(CommandItems): # Not used by gmpc
+    def items(self):
+        return [('command','tagtypes'),
+                ('command','lsinfo')]
 class LsInfo(CommandItems): # Since 0.12
     formatArg=[('directory',OptStr)]
 

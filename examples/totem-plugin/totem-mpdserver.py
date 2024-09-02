@@ -8,7 +8,7 @@ import mpdserver
 
 class Pause(mpdserver.Pause):
 	def handle_pause(self):
-		print "Pause catched"
+		print("Pause catched")
 		self.player.action_play_pause()
 
 class MpdServerPlugin(GObject.Object, Peas.Activatable):
@@ -31,3 +31,4 @@ class MpdServerPlugin(GObject.Object, Peas.Activatable):
 
 	def do_deactivate(self):
 		self.mpd.quit()
+

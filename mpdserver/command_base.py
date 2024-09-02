@@ -143,7 +143,7 @@ class CommandItems(Command):
         must return a list a tuples ("key",value)."""
         return []
     def toMpdMsg(self):
-        items=self.items()
+        items=list(self.items())
         acc=""
         for (i,v) in items:
             acc+="%s: %s\n"%(i,str(v))
@@ -223,10 +223,10 @@ class MpdLibrarySong(object):
 
 import types
 class Opt(object):pass
-class OptInt(Opt,types.IntType):
+class OptInt(Opt,int):
     """ Represent optionnal integer command argument"""
     pass
-class OptStr(Opt,types.StringType):
+class OptStr(Opt,bytes):
     """ Represent optionnal string command argument"""
     pass
 
@@ -276,12 +276,12 @@ class PlaylistHistory(object):
         return diff
             
     def show(self):
-        print "show playlistHistory"
-        print "number of version: " + str(len(self.playlistHistory))
+        print("show playlistHistory")
+        print("number of version: " + str(len(self.playlistHistory)))
         for i in self.playlistHistory:
-            print i
-            print "------"
-        print "show playlistHistory end"
+            print(i)
+            print("------")
+        print("show playlistHistory end")
         
 
 class MpdPlaylist(object):
@@ -339,3 +339,4 @@ class MpdPlaylistDummy(MpdPlaylist):
         logger.warning("Dummy implementation of handlePlaylist method")
         return []
         
+
